@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+pre {
+    font-size: 7em;
+  }
+  .tick line {
+    stroke: #C0C0BB;
+  }
+  .tick text {
+    fill: #635F5D;
+  }
+  .marks circle {
+    fill: #137B80;
+  }
+  .marks path {
+    fill: none;
+    stroke: #137B80;
+    stroke-width: 5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }

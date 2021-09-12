@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Converter from '../components/Converter'
+import LinearGraph from '../components/LinearGraph'
 
 import Header from '../components/Header'
 
@@ -24,13 +26,29 @@ export default function Home() {
         <title>Página Inicial - MozEconomia</title>
       </Head>
 
-      <Header />
+      <div className="font-sans w-screen h-screen">
+        <div className="bg-blue h-4/5">
+          <div className="container">
+            <Header />
+        
+            <div className="flex items-center mt-3">
+              <div className="w-2/6">
+                <p>
+                  Cambio e a economia moçambicana em gráficos 
+                </p>
+              </div>
+            
+              <div className="w-1/2">
+                <LinearGraph />
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div className="container font-sans">
-        <h1 className="">HElLO World!</h1>
-        <button>
-          MozEconomia
-        </button> 
+
+        <div>
+          <Converter />
+        </div>
       </div>
     </div>
   )

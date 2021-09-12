@@ -1,0 +1,62 @@
+import { scaleLinear, scaleTime, extent, NumberValue } from 'd3';
+import { useData } from './useData';
+import { AxisBottom } from './AxisBottom';
+import { AxisLeft } from './AxisLeft';
+import { Marks } from './Marks';
+
+const width = 760;
+const height = 370;
+const margin = { top: 20, right: 30, bottom: 65, left: 220 };
+const xAxisLabelOffset = 50;
+const yAxisLabelOffset = 40;
+
+const BarCharts: React.FC = () => {
+  const data = useData();
+  
+  if (!data) {
+    return <pre>Loading...</pre>;
+  }
+
+  const innerHeight = height - margin.top - margin.bottom;
+  const innerWidth = width - margin.left - margin.right;
+
+  const yValue = data.homologa;
+
+  const xValue = (index: number) => new Date(2019, index);
+
+  const yScale = scaleLinear()
+    .domain(extent(yValue) as Iterable<NumberValue>)
+    .range([innerHeight, 0])
+    .nice()
+
+  const xScale = scaleTime()
+    .domain(extent(yValue, xValue) as Iterable<NumberValue>)
+    .range([0, innerWidth])
+    .nice();
+    
+  return (
+    <svg width={width} height={height}>
+      <g transform={`translate(${margin.left},${margin.top})`}>
+        <AxisBottom
+          xScale={xScale}
+          innerHeight={innerHeight}
+          tickOffset={5}
+        />
+        <AxisLeft 
+          yScale={yScale} 
+          innerWidth={innerWidth} 
+          tickOffset={5}
+        />
+        <Marks
+          xScale={xScale}
+          yScale={yScale}
+          xValue={xValue}
+          yValue={yValue}
+          circleRadios={4}
+        />
+      </g>
+    </svg>
+  );
+};
+
+export default BarCharts
