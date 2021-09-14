@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { json } from 'd3'
 
-const jsonUrl = 'http://localhost:3002/files/inflation/maputo.json'
+const jsonUrl = 'http://localhost:3002/files/inflation/nacional.json'
 
 export type Inflation = {
   year: number
@@ -16,7 +16,7 @@ export const useData = () => {
     json(jsonUrl).then((inflation: any) => { 
 
       const yearInflation: Inflation = inflation.filter((yearInflation: Inflation) => {
-        return yearInflation.year === 2019
+        return yearInflation.year === 2021
       })[0]
 
       setData(yearInflation)

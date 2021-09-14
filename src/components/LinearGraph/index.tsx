@@ -22,7 +22,7 @@ const BarCharts: React.FC = () => {
 
   const yValue = data.homologa;
 
-  const xValue = (index: number) => new Date(2019, index);
+  const xValue = (index: number) => new Date(2021, index);
 
   const yScale = scaleLinear()
     .domain(extent(yValue) as Iterable<NumberValue>)
@@ -30,7 +30,7 @@ const BarCharts: React.FC = () => {
     .nice()
 
   const xScale = scaleTime()
-    .domain(extent(yValue, xValue) as Iterable<NumberValue>)
+    .domain(extent([0,1,2,3,4,5,6,7,8,9,10,11], xValue) as Iterable<NumberValue>)
     .range([0, innerWidth])
     .nice();
     
