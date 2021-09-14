@@ -4,8 +4,8 @@ import { AxisBottom } from './AxisBottom';
 import { AxisLeft } from './AxisLeft';
 import { Marks } from './Marks';
 
-const width = 760;
-const height = 370;
+const width = 750;
+const height = 330;
 const margin = { top: 20, right: 30, bottom: 65, left: 220 };
 const xAxisLabelOffset = 50;
 const yAxisLabelOffset = 40;
@@ -40,12 +40,12 @@ const BarCharts: React.FC = () => {
         <AxisBottom
           xScale={xScale}
           innerHeight={innerHeight}
-          tickOffset={5}
+          tickOffset={8}
         />
         <AxisLeft 
           yScale={yScale} 
           innerWidth={innerWidth} 
-          tickOffset={5}
+          tickOffset={8}
         />
         <Marks
           xScale={xScale}

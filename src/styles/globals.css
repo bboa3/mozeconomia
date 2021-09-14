@@ -7,6 +7,9 @@ pre {
     font-size: 7em;
   }
   .tick line {
+    stroke: #c0c0bb3d;
+  }
+  .tick .line-0 {
     stroke: #C0C0BB;
   }
   .tick text {

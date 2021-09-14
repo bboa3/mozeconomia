@@ -9,9 +9,9 @@ interface Props {
 export const AxisLeft: React.FC<Props> = ({ yScale, innerWidth, tickOffset=3 }) => (
   <>
     {
-      yScale.ticks().map((tickValue) => (
+      yScale.ticks().map((tickValue, index) => (
         <g className="tick" transform={`translate(0, ${yScale(tickValue)})`}>
-          <line x2={innerWidth} />
+          <line x2={innerWidth} className={`line-${index}`} />
           <text
             key={tickValue}
             style={{ textAnchor: 'end' }}
