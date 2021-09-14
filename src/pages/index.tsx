@@ -39,6 +39,7 @@ export default function Home() {
               </div>
             
               <div className="w-1/2">
+                <div className="text-white text-center ml-60">Variação de Preços (Inflação) 2021</div>
                 <LinearGraph />
               </div>
             </div>

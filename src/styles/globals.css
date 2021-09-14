@@ -7,21 +7,22 @@ pre {
     font-size: 7em;
   }
   .tick line {
-    stroke: #c0c0bb3d;
+    stroke: rgba(255, 255, 255, 0.140);
   }
   .tick .line-0 {
-    stroke: #C0C0BB;
+    stroke: #fff;
   }
   .tick text {
-    fill: #635F5D;
+    fill: #fff;
+    font-size: smaller;
   }
   .marks circle {
-    fill: #137B80;
+    fill: #EB008A;
   }
   .marks path {
     fill: none;
-    stroke: #137B80;
-    stroke-width: 5;
+    stroke: #EB008A;
+    stroke-width: 2;
     stroke-linejoin: round;
     stroke-linecap: round;
   }

@@ -5,7 +5,7 @@ import { AxisLeft } from './AxisLeft';
 import { Marks } from './Marks';
 
 const width = 750;
-const height = 330;
+const height = 295;
 const margin = { top: 20, right: 30, bottom: 65, left: 220 };
 const xAxisLabelOffset = 50;
 const yAxisLabelOffset = 40;
