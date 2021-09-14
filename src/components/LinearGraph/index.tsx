@@ -1,4 +1,4 @@
-import { scaleLinear, scaleTime, extent, NumberValue } from 'd3';
+import { scaleLinear, scaleTime, extent, NumberValue, max, min } from 'd3';
 import { useData } from './useData';
 import { AxisBottom } from './AxisBottom';
 import { AxisLeft } from './AxisLeft';
@@ -25,7 +25,7 @@ const BarCharts: React.FC = () => {
   const xValue = (index: number) => new Date(2021, index);
 
   const yScale = scaleLinear()
-    .domain(extent(yValue) as Iterable<NumberValue>)
+    .domain([min(yValue)! -1, max(yValue)! + 1] as Iterable<NumberValue>)
     .range([innerHeight, 0])
     .nice()
 
