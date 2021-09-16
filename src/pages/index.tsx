@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Converter from '../components/Converter'
+import React from 'react'
+import ExchangeRates from '../components/ExchangeRates'
 
 import Header from '../components/Header'
 import LineChartGraph from '../components/LinearChart'
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div>
       <Head>
@@ -27,7 +28,7 @@ export default function Home() {
       </Head>
 
       <div className="font-sans w-screen h-screen">
-        <div className="bg-blue h-4/5">
+        <div className="bg-blue h-4/5 relative">
           <div className="container">
             <Header />
         
@@ -48,13 +49,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <ExchangeRates />
         </div>
 
-
-        <div>
-          <Converter />
-        </div>
       </div>
     </div>
   )
 }
+
+
+export default Home;
