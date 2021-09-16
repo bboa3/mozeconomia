@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Converter from '../components/Converter'
-import LinearGraph from '../components/LinearGraph'
 
 import Header from '../components/Header'
+import LineChartGraph from '../components/LinearChart'
 
 export default function Home() {
   return (
@@ -31,16 +31,20 @@ export default function Home() {
           <div className="container">
             <Header />
         
-            <div className="flex items-center mt-3">
+            <div className="flex justify-between items-center mt-3">
               <div className="w-2/6">
-                <p>
+                <p className="text-white text-4xl">
                   Cambio e a economia moçambicana em gráficos 
                 </p>
               </div>
             
-              <div className="w-1/2">
-                <div className="text-white text-center ml-60">Variação de Preços (Inflação) 2021</div>
-                <LinearGraph />
+              <div className="w-1/2 mt-7">
+                <div 
+                  className="text-white text-center mb-4 text-xl"
+                >
+                  Variação de Preços (Inflação)
+                </div>
+                <LineChartGraph />
               </div>
             </div>
           </div>
