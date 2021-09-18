@@ -39,7 +39,7 @@ const Home: React.FC = () => {
                 </p>
               </div>
             
-              <div className="w-1/2 mt-5">
+              <div className="w-3/5 mt-5">
                 <div 
                   className="text-white text-center mb-1 text-sm"
                 >

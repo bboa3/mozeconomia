@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { useData } from './useData';
 
 
@@ -13,9 +13,9 @@ const LineChartGraph: React.FC = () => {
   }
 
     return (
-      <ResponsiveContainer width="100%" aspect={2.2}>
-        <LineChart
-          width={500}
+      <ResponsiveContainer width="98%" aspect={2.5}>
+        <AreaChart
+          width={600}
           height={300}
           data={data}
           margin={{
@@ -25,26 +25,40 @@ const LineChartGraph: React.FC = () => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="4 4 6"/>
-          <XAxis dataKey="name" tick={{fill: "#fff", fontSize: 12}} />
-          <YAxis height={500} tickCount={4} tick={{fill: "#fff", fontSize: 12 }} domain={['dataMin', 'dataMax + 2']} />
+          <CartesianGrid strokeDasharray="4 4 6" opacity={0.4} vertical={false} />
+          <defs>
+            <linearGradient id="colorHomologa" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#EB008A" stopOpacity={0.3}/>
+              <stop offset="95%" stopColor="#EB008A" stopOpacity={0}/>
+            </linearGradient>
+            <linearGradient id="colorMensal" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.2}/>
+              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name"  stroke="#fff" tick={{fill: "#fff", fontSize: 12}} />
+          <YAxis axisLine={false} tickCount={6} tick={{fill: "#fff", fontSize: 12 }}  />
           <Tooltip />
           <Legend />
-          <Line 
+          <Area 
             type="monotone" 
             dataKey="homologa" 
             strokeWidth={2}
+            fillOpacity={1}
+            fill="url(#colorHomologa)"
             stroke="#EB008A" 
             dot={{ fill:"#EB008A", stroke:"#fd6ac0", strokeWidth: 2, r: 3 }} 
             activeDot={{ stroke:"#fd6ac0", r: 8 }} 
           />
-          <Line 
+          <Area 
             type="monotone" 
             dataKey="mensal" 
+            fill="url(#colorMensal)"
+            fillOpacity={1}
             stroke="#82ca9d" 
             dot={{ fill:"#82ca9d", stroke:"#82ca9d", strokeWidth: 2, r: 3 }}
           />
-        </LineChart>
+        </AreaChart>
       </ResponsiveContainer>
     );
 }
