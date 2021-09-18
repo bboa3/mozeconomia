@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "d3": "^6.7.0",
     "next": "11.0.1",
     "react": "17.0.2",

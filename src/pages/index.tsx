@@ -27,8 +27,8 @@ const Home: React.FC = () => {
         <title>Página Inicial - MozEconomia</title>
       </Head>
 
-      <div className="font-sans w-screen h-screen">
-        <div className="bg-blue h-4/5 relative">
+      <div className="font-sans w-screen overflow-hidden">
+        <div style={{height: '75vh'}} className="bg-blue relative">
           <div className="container">
             <Header />
         
@@ -39,9 +39,9 @@ const Home: React.FC = () => {
                 </p>
               </div>
             
-              <div className="w-1/2 mt-7">
+              <div className="w-1/2 mt-5">
                 <div 
-                  className="text-white text-center mb-4 text-xl"
+                  className="text-white text-center mb-1 text-sm"
                 >
                   Variação de Preços (Inflação)
                 </div>
@@ -53,6 +53,7 @@ const Home: React.FC = () => {
           <ExchangeRates />
         </div>
 
+        <div className="h-60 w-full"></div>
       </div>
     </div>
   )

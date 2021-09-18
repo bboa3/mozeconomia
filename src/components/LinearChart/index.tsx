@@ -42,6 +42,7 @@ const LineChartGraph: React.FC = () => {
             type="monotone" 
             dataKey="mensal" 
             stroke="#82ca9d" 
+            dot={{ fill:"#82ca9d", stroke:"#82ca9d", strokeWidth: 2, r: 3 }}
           />
         </LineChart>
       </ResponsiveContainer>
