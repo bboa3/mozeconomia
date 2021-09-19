@@ -36,8 +36,8 @@ const LineChartGraph: React.FC = () => {
               <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
             </linearGradient>
           </defs>
-          <XAxis dataKey="name"  stroke="#fff" tick={{fill: "#fff", fontSize: 12}} />
-          <YAxis axisLine={false} tickCount={6} tick={{fill: "#fff", fontSize: 12 }}  />
+          <XAxis dataKey="name" stroke="#fff" tick={{fill: "#fff", fontSize: 11}} />
+          <YAxis axisLine={false} tickCount={6} tick={{fill: "#fff", fontSize: 11 }}  />
           <Tooltip />
           <Legend />
           <Area 

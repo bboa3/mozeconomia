@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between items-center mt-3">
               <div className="w-2/6">
                 <p className="text-white text-4xl">
-                  Cambio e a economia moçambicana em gráficos 
+                  Moçambique registou uma inflação anual de 5,61% em agosto, após 5,48% em julho.
                 </p>
               </div>
             
