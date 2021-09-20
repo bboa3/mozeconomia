@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
+import BarChartGraph from '../components/BarChart'
 import ExchangeRates from '../components/ExchangeRates'
 
 import Header from '../components/Header'
@@ -53,7 +54,12 @@ const Home: React.FC = () => {
           <ExchangeRates />
         </div>
 
-        <div className="h-60 w-full"></div>
+        <div className="w-full flex flex-row mt-96">
+          <div className="w-full h-96 grid grid-flow-row gap-1">
+            <BarChartGraph />
+            <BarChartGraph />
+          </div>
+        </div>
       </div>
     </div>
   )
