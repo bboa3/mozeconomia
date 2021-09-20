@@ -3,8 +3,8 @@ const ExchangeRates: React.FC = () =>  {
 
   return (
     <div 
-      style={{width: '90%', left: '5%'}} 
-      className="pb-6 pt-7 flex rounded absolute -bottom-1/3 bg-white shadow-xl"
+      style={{width: '90%', left: '5%', bottom: '-46%'}} 
+      className="pb-6 pt-7 flex rounded absolute bg-white shadow-xl"
     >
       <form className="w-2/4 ml-14 flex items-start flex-col">
         <label htmlFor="amount" className="font-bold text-gray-700">Montante</label>
