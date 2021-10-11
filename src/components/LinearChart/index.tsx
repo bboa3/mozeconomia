@@ -1,8 +1,6 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { useData } from './useData';
-
-
 
 const LineChartGraph: React.FC = () => {
 
@@ -13,7 +11,7 @@ const LineChartGraph: React.FC = () => {
   }
 
     return (
-      <ResponsiveContainer width="98%" aspect={2.5}>
+      <ResponsiveContainer width="97%" aspect={2.5}>
         <AreaChart
           width={600}
           height={300}
@@ -36,8 +34,18 @@ const LineChartGraph: React.FC = () => {
               <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
             </linearGradient>
           </defs>
-          <XAxis dataKey="name" stroke="#fff" tick={{fill: "#fff", fontSize: 11}} />
-          <YAxis axisLine={false} tickCount={6} tick={{fill: "#fff", fontSize: 11 }}  />
+          <XAxis 
+            dataKey="name" 
+            stroke="#fff" 
+            tick={{fill: "#fff", 
+            fontSize: 11}} 
+          />
+          <YAxis 
+            axisLine={false} 
+            tickCount={6} 
+            tick={{fill: "#fff", 
+            fontSize: 11 
+          }}  />
           <Tooltip />
           <Legend />
           <Area 

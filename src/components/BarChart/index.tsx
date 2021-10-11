@@ -2,15 +2,19 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { useData } from './useData';
 
-const BarChartGraph:React.FC = () => {  
-  const data = useData();
-  
-  if (!data) {
-    return <pre>Loading...</pre>;
-  }
+interface Props {
+  data: Data[]
+}
+
+type Data = {
+  name: string
+  homologa: number
+}
+
+const BarChartGraph:React.FC<Props> = ({data}) => {
   
   return (
-    <ResponsiveContainer width="98%" aspect={2.5}>
+    <ResponsiveContainer width="100%" aspect={2.5}>
       <BarChart
         width={500}
         height={300}
@@ -18,17 +22,25 @@ const BarChartGraph:React.FC = () => {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 0,
           bottom: 5,
         }}
         stackOffset="sign"
       >
-        <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-        <YAxis />
+        <XAxis 
+          dataKey="name" 
+          interval={0} 
+          angle={30} 
+          scale="point" 
+          tickSize={13} 
+          padding={{ left: 25, right: 10 }} 
+          tick={{fontSize: 11}} 
+        />
+        <YAxis axisLine={false} />
         <Tooltip />
         <CartesianGrid strokeDasharray="3 3" />
         <ReferenceLine y={0} stroke="#000" />
-        <Bar dataKey="homologa" fill="#8884d8" background={{ fill: '#eee' }} stackId="stack" />
+        <Bar dataKey="homologa" fill="#020046" background={{ fill: '#eee' }} stackId="stack" />
       </BarChart>
     </ResponsiveContainer>
   );

@@ -4,22 +4,24 @@ import { months } from '../../utils/days';
 
 const jsonUrl = 'http://localhost:3002/files/inflation/nacional.json'
 
-export interface InflationData {
+interface Data {
   name: string
   mensal: number
   homologa: number
 }
 
 export const useData = () => {
-  const [data, setData] = useState<InflationData[] | null>(null);
+  const [data, setData] = useState<Data[] | null>(null);
 
   useEffect(() => {
     json(jsonUrl).then((inflation: any) => { 
 
-      const currentYear = inflation[inflation.length -1];
-      const lastYear = inflation[inflation.length -2];
+      const total = inflation.total;
 
-      const data: InflationData[] = currentYear.homologa.map((homologa: number, index: number) => {
+      const currentYear = total[total.length -1];
+      const lastYear = total[total.length -2];
+
+      const data: Data[] = currentYear.homologa.map((homologa: number, index: number) => {
         const mensal: number = currentYear.mensal[index];
     
         return {
@@ -48,7 +50,6 @@ export const useData = () => {
     });
 
   }, []);
-
 
   return data;
 };

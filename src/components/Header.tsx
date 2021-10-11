@@ -5,7 +5,7 @@ import LogoImage from '../assets/images/logo'
 const Header: React.FC = () => {
   return (
     <nav className="w-full flex items-center border-b-2 border-gray-700">
-      <div className="w-7, h-7">
+      <div className="w-6">
         <LogoImage />
       </div>
       <ul className="w-full h-14 flex items-center justify-center">

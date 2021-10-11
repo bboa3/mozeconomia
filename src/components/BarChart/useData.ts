@@ -1,41 +1,20 @@
 import { useState, useEffect } from 'react'
-import { months } from '../../utils/days';
-import { alimentares } from '../../utils/produtos';
+import { json } from 'd3'
+import { Product } from "noneconomic";
 
-export interface InflationData {
-  name: string
-  homologa: number
-}
+const jsonUrl = 'http://localhost:3002/files/inflation/nacional.json'
 
 export const useData = () => {
-  const [data, setData] = useState<InflationData[] | null>(null);
+  const [data, setData] = useState<Product[] | null>(null);
 
   useEffect(() => {
-    const currentYear = alimentares[alimentares.length -1];
-    const lastYear = alimentares[alimentares.length -2];
-    
-    const data: InflationData[] = currentYear.homologa.map((homologa: number, index: number) => {
+    json(jsonUrl).then((inflation: any) => { 
+
+      const products = inflation.products;
       
-      return {
-        name: `${currentYear.year} ${months[index]}`,
-        homologa: homologa
-      }
-    })
-    
-    let i = 11;
-    
-    while (data.length <= 11) {
-      const homologa: number = lastYear.homologa[i];
-      
-      data.unshift({
-        name: `${lastYear.year} ${months[i]}`,
-        homologa: homologa
-      })
-      
-      i--
-    }
-    
-    setData(data)
+      setData(products)
+    });
+
   }, []);
 
   return data;
