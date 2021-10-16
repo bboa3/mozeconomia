@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { useData } from './useData';
 
 interface Props {
   data: Data[]
@@ -11,7 +10,7 @@ type Data = {
   homologa: number
 }
 
-const BarChartGraph:React.FC<Props> = ({data}) => {
+const BarChartGraph:React.FC<Props> = memo(({data}) => {
   
   return (
     <ResponsiveContainer width="100%" aspect={2.5}>
@@ -44,6 +43,6 @@ const BarChartGraph:React.FC<Props> = ({data}) => {
       </BarChart>
     </ResponsiveContainer>
   );
-}
+})
 
 export default BarChartGraph;

@@ -1,5 +1,6 @@
+import { memo } from "react"
 
-const ExchangeRates: React.FC = () =>  {
+const ExchangeRates: React.FC = memo(() =>  {
 
   return (
     <div 
@@ -42,6 +43,6 @@ const ExchangeRates: React.FC = () =>  {
       </div>
     </div>
     ) 
-  }
+  })
   
 export default ExchangeRates

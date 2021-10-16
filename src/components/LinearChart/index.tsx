@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { useData } from './useData';
 
-const LineChartGraph: React.FC = () => {
+const LineChartGraph: React.FC = memo(() => {
 
   const data =  useData();
 
@@ -69,7 +69,7 @@ const LineChartGraph: React.FC = () => {
         </AreaChart>
       </ResponsiveContainer>
     );
-}
+})
 
 
 export default LineChartGraph

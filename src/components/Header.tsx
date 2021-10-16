@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Link from 'next/link'
 import LogoImage from '../assets/images/logo'
 
-const Header: React.FC = () => {
+const Header: React.FC = memo(() => {
   return (
     <nav className="w-full flex items-center border-b-2 border-gray-700">
       <div className="w-6">
@@ -19,6 +19,6 @@ const Header: React.FC = () => {
       </ul>
     </nav>
   )
-}
+})
 
 export default Header
