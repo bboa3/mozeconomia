@@ -15,7 +15,7 @@ const formatData = (products: Product[], label: string) => {
   const data = currentYear.homologa.map((homologa: number, index: number) => {
     
     return {
-      name: `${currentYear.year} ${months[index]}`,
+      name: `${months[index]} ${currentYear.year}`,
       homologa: homologa
     }
   })
@@ -26,7 +26,7 @@ const formatData = (products: Product[], label: string) => {
     const homologa: number = lastYear.homologa[i];
     
     data.unshift({
-      name: `${lastYear.year} ${months[i]}`,
+      name: `${months[i]} ${lastYear.year}`,
       homologa: homologa
     })
     

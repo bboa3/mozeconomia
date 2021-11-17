@@ -11,7 +11,6 @@ type Data = {
 }
 
 const BarChartGraph:React.FC<Props> = memo(({data}) => {
-  
   return (
     <ResponsiveContainer width="100%" aspect={2.5}>
       <BarChart
@@ -29,7 +28,7 @@ const BarChartGraph:React.FC<Props> = memo(({data}) => {
         <XAxis 
           dataKey="name" 
           interval={0} 
-          angle={30} 
+          angle={-30} 
           scale="point" 
           tickSize={13} 
           padding={{ left: 25, right: 10 }} 
@@ -39,7 +38,13 @@ const BarChartGraph:React.FC<Props> = memo(({data}) => {
         <Tooltip />
         <CartesianGrid strokeDasharray="3 3" />
         <ReferenceLine y={0} stroke="#000" />
-        <Bar dataKey="homologa" fill="#020046" background={{ fill: '#eee' }} stackId="stack" />
+        <Bar 
+          dataKey="homologa" 
+          barSize={25}
+          fill="#020046" 
+          background={false} 
+          stackId="stack"
+        />
       </BarChart>
     </ResponsiveContainer>
   );

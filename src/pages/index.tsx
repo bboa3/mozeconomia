@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/Image'
 import React from 'react'
 import BarChartGraph from '../components/BarChart'
 import formatData from '../components/BarChart/formatData'
@@ -7,6 +8,8 @@ import ExchangeRates from '../components/ExchangeRates'
 
 import Header from '../components/Header'
 import LineChartGraph from '../components/LinearChart'
+
+import coinImg from '../assets/images/mocambique-moedas.jpg'
 
 const Home: React.FC = () => {
   const data = useData()
@@ -48,30 +51,36 @@ const Home: React.FC = () => {
         <title>Página Inicial - MozEconomia</title>
       </Head>
 
+      <Header />
       <div className="font-sans w-full h-screen">
-        <div className="bg-blue h-3/4 relative">
-          <div className="container">
-            <Header />
-        
-            <div className="flex justify-between items-center mt-3">
-              <div className="w-2/6">
-                <p className="text-white text-4xl">
-                  Moçambique registou uma inflação anual de 5,61% em agosto, após 5,48% em julho.
-                </p>
-              </div>
-            
-              <div className="w-3/5 mt-5">
-                <div 
-                  className="text-white text-center mb-1 text-sm"
-                >
-                  Variação de Preços (Inflação)
+        <div className="h-3/4 absolute z-20">
+          <div className="h-full flex md:ml-6 mt-14 relative">
+            <div className="container">
+              <div className="flex justify-center items-center mt-3">
+                <div className="w-2/6">
+                  <p className="text-white text-4xl">
+                    Moçambique registou uma inflação anual de 5,61% em agosto, após 5,48% em julho.
+                  </p>
                 </div>
-                <LineChartGraph />
+              
+                <div className="w-3/5 mt-5">
+                  <div 
+                    className="text-white text-center mb-1 text-sm"
+                  >
+                    Variação de Preços (Inflação)
+                  </div>
+                  <LineChartGraph />
+                </div>
               </div>
             </div>
-          </div>
 
-          <ExchangeRates />
+            <ExchangeRates />
+          </div>
+        </div>
+
+        <div className="relative w-full h-screen truncate">
+          <Image className="" layout="fill" src={coinImg} />
+          <div className="w-full h-full absolute top-0 right-0 z-10 opacity-70 bg-blue"></div>
         </div>
 
         <div className="w-full mt-96">

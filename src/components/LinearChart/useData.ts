@@ -25,7 +25,7 @@ export const useData = () => {
         const mensal: number = currentYear.mensal[index];
     
         return {
-          name: `${currentYear.year} ${months[index]}`,
+          name: `${months[index]} ${currentYear.year}`,
           mensal: mensal,
           homologa: homologa
         }
@@ -38,7 +38,7 @@ export const useData = () => {
         const homologa: number = lastYear.homologa[i];
 
         data.unshift({
-          name: `${lastYear.year} ${months[i]}`,
+          name: `${months[i]} ${lastYear.year}`,
           mensal: mensal,
           homologa: homologa
         })

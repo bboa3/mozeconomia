@@ -26,16 +26,20 @@ const LineChartGraph: React.FC = memo(() => {
           <CartesianGrid strokeDasharray="4 4 6" opacity={0.4} vertical={false} />
           <defs>
             <linearGradient id="colorHomologa" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#EB008A" stopOpacity={0.3}/>
+              <stop offset="5%" stopColor="#EB008A" stopOpacity={0.4}/>
               <stop offset="95%" stopColor="#EB008A" stopOpacity={0}/>
             </linearGradient>
             <linearGradient id="colorMensal" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.2}/>
+              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.3}/>
               <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
             </linearGradient>
           </defs>
+
           <XAxis 
             dataKey="name" 
+            interval={0} 
+            angle={-30} 
+            tickSize={13} 
             stroke="#fff" 
             tick={{fill: "#fff", 
             fontSize: 11}} 
@@ -49,22 +53,22 @@ const LineChartGraph: React.FC = memo(() => {
           <Tooltip />
           <Legend />
           <Area 
-            type="monotone" 
+            type="natural"
             dataKey="homologa" 
             strokeWidth={2}
             fillOpacity={1}
             fill="url(#colorHomologa)"
             stroke="#EB008A" 
-            dot={{ fill:"#EB008A", stroke:"#fd6ac0", strokeWidth: 2, r: 3 }} 
-            activeDot={{ stroke:"#fd6ac0", r: 8 }} 
+            dot={{ fill:"#EB008A", stroke:"#fd6ac0", strokeWidth: 1, r: 3 }} 
+            activeDot={{ stroke:"#fd6ac0", r: 6 }} 
           />
           <Area 
-            type="monotone" 
+            type="natural" 
             dataKey="mensal" 
             fill="url(#colorMensal)"
             fillOpacity={1}
             stroke="#82ca9d" 
-            dot={{ fill:"#82ca9d", stroke:"#82ca9d", strokeWidth: 2, r: 3 }}
+            dot={{ fill:"#82ca9d", stroke:"#82ca9d", strokeWidth: 1, r: 2 }}
           />
         </AreaChart>
       </ResponsiveContainer>
