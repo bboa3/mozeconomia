@@ -10,7 +10,7 @@ type Data = {
   homologa: number
 }
 
-const BarChartGraph:React.FC<Props> = memo(({data}) => {
+const BarChartGraph:React.FC<Props> = memo(({ data }) => {
   return (
     <ResponsiveContainer width="100%" aspect={2.5}>
       <BarChart
