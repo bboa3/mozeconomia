@@ -9,6 +9,60 @@ import LineChartGraph from '../components/LinearChart'
 
 import coinImg from '../assets/images/mocambique-moedas.jpg'
 import Products from '../components/Products'
+import MarketShow from '../components/MarketShow'
+
+const trades = [
+  { 
+    icon: 'https://flagcdn.com/w20/us.png', 
+    code: "USD", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/zw.png', 
+    code: "ZWL", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/in.png', 
+    code: "INR", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/za.png', 
+    code: "ZAR", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/iq.png', 
+    code: "IQD", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/jp.png', 
+    code: "JPY", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/ru.png', 
+    code: "RUB", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/ae.png', 
+    code: "AED", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/au.png', 
+    code: "AUD", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/br.png', 
+    code: "BRL", 
+    price: 64 
+  }
+]
 
 const Home: React.FC = () => {
 
@@ -65,6 +119,9 @@ const Home: React.FC = () => {
         </div>
 
         <div className="w-full mt-96">
+        <div className='w-full'>
+          <MarketShow trades={trades} />
+        </div>
           <Products />
         </div>
       </div>

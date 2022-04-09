@@ -18,6 +18,19 @@ module.exports = {
           dark: '#020030'
         }
       },
+      animation: {
+        market: 'market 20s linear infinite'
+      },
+      keyframes: {
+        market: {
+          '0%': { 
+            left: 0
+          },
+          '100%': {
+            left: '-100%'
+          }
+        }
+      }
     },
     
     container: {
