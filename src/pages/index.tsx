@@ -61,6 +61,16 @@ const trades = [
     icon: 'https://flagcdn.com/w20/br.png', 
     code: "BRL", 
     price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/bw.png', 
+    code: "BWP", 
+    price: 64 
+  },
+  { 
+    icon: 'https://flagcdn.com/w20/gb-eng.png', 
+    code: "GBP", 
+    price: 64 
   }
 ]
 
